@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html><head> <title>jQuery Exemple 1</title> <!-- debut de l'entete html (html5), avec definition du titre de la page -->
+<style> 
+#change_me {position: absolute; top: 200px; left: 200px; font: 24px arial;} /* definition de la position du texte a afficher selon une position absolue */
+#move_up #move_down #color #disappear {padding: 5px;} /* definition d'une marge a respecter apres un deplacement */
+</style> 
+</head> 
+<body>  
+	<button id="move_up">Monter</button> <!-- creation d'un bouton pour monter -->
+	<button id="move_down">Descendre</button> <!-- creation d'un bouton pour descendre -->
+	<button id="color">Colorer</button> <!-- creation d'un bouton pour colorer -->
+	<button id="disappear">Disparaître/Re-apparaître</button> <!-- creation d'un bouton pour faire disparaitre -->
+	
+	<div id="change_me">Coucou!</div> <!-- affichage su message de maniere brute -->
+<script src="scripts/jquery.min.js"></script> <!-- appel du script jquery.min.js permettant de creer un script qui nous permettra de faire l'affichage dynamique sans re-chargement de la page -->
+<script> /* script nous permettant de faire l affichage dynamique */
+	$(document).ready(function() {
+		$("#move_up").click( function() {
+				$("#change_me").animate({top:40},200); 
+		});//end move_up
+		$("#move_down").click( function() {	
+				$("#change_me").animate({top:500},2000);  
+		});//end move_down
+		$("#color").click( function() {
+				$("#change_me").css("color", "red");	
+		});//end color
+		$("#disappear").click( function() {
+				$("#change_me").toggle('slow'); 
+		});//end disappear
+	});//end doc ready
+</script> 
+</body> 
+</html>
