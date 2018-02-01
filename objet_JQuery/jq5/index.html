@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>SOS Animaux</title>
+		<link rel="stylesheet" type="text/css" href="styles/style.css">
+	</head>
+	<body>
+		<div id="clickMe">Montre moi le chien du jour</div>
+		<div id="picframe">
+			<img src="images/furry_friend.jpg">
+		</div>
+		<script src="scripts/jquery.js"></script>
+		<script>
+			$(document).ready(function(){
+				$("#clickMe").click(function() {
+					$("img").fadeToggle("slow");
+					$("#picframe").slideToggle("slow");
+				});
+			});
+		</script>
+	</body>
+</html>
